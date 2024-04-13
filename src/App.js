@@ -1,11 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Login from './components/Login';
+import Browse from './components/Browse';
+
+const browserRouter = createBrowserRouter([
+  { path: '/', element: <Login /> },
+  { path: '/browse', element: <Browse /> },
+]);
 
 function App() {
   return (
-    <div className="text-5xl font-bold">
-      Netlix-GPT
-    </div>
+    <RouterProvider router={browserRouter} />
   );
 }
 
